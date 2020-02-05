@@ -1,0 +1,100 @@
+{% load static %}
+{% extends "base.html" %}
+{% block content %}
+
+ <header>
+        <div class="header-bar">
+          <nav>
+            <div class="siteTitle">
+              <a href="">Blog</a>
+            </div>
+
+            <a class="nav-item" href="/post/"
+              ><div class="nav-item-title">Posts</div></a
+            >
+            <a class="nav-item" href="blog/admin/login.php"
+              ><div class="nav-item-title">Admin</div></a
+            >
+          </nav>
+
+          <div class="social-links-header">
+            <!--
+
+            <a href="https://github.com/github%20id" target="_blank"
+              ><div class="social-link">git</div></a
+            >
+
+            <a href="https://gitlab.com/gitlab%20id" target="_blank"
+              ><div class="social-link">gl</div></a
+            >
+
+            <a href="https://twitter.com/twitter%20id" target="_blank"
+              ><div class="social-link">twtr</div></a
+            >
+
+            <a href="https://www.linkedin.com/in/linkedin%20id" target="_blank"
+              ><div class="social-link">in</div></a
+            >-->
+          </div>
+        </div>
+      </header>
+ <main>
+        <div class="page-nav">
+          <div class="page-prev"></div>
+
+
+
+          <div class="page-next"></div>
+        </div>
+      </main>
+
+{% for post in post_list %}
+<article class="post-preview">
+        <header>
+          <h2 class="title">
+            <a
+
+            >
+              {{ post.title }}</a
+            >
+          </h2>
+          <div class="meta">
+            <div class="date">
+              {{ post.created_on}}
+            </div>
+          </div>
+        </header>
+
+        <div class="summary">
+
+
+          <p>
+
+            {{post.content|slice:":200" }}
+          </p>
+        </div>
+
+
+      </article>
+{% endfor %}
+<!--
+<div class="container">
+    <div class="row">
+
+        <div class="col-md-8 mt-3 left">
+            {% for post in post_list %}
+            <div class="card mb-4">
+                <div class="card-body">
+                    <h2 class="card-title">{{ post.title }}</h2>
+                    <p class="card-text text-muted h6">{{ post.author }} | {{ post.created_on}} </p>
+                    <p class="card-text">{{post.content|slice:":200" }}</p>
+
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+
+    </div>
+</div> -->
+
+{%endblock%}

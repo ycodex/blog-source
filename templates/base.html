@@ -1,0 +1,65 @@
+{% load static %}
+
+<!DOCTYPE html>
+
+<html>
+
+    <head>
+        <title>Django Central</title>
+        <link href="https://fonts.googleapis.com/css?family=Roboto:400,700" rel="stylesheet">
+        <meta name="google" content="notranslate" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+            crossorigin="anonymous" />
+        <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %">
+        <link rel="stylesheet"  type="text/css" href="{% static 'css/style-dark.css' %">
+    </head>
+
+    <body>
+
+
+
+        <!-- Navigation -->
+       <div class="main">
+        {% block content %}
+        <!-- Content Goes here -->
+        {% endblock content %}
+        <!-- Footer -->
+            <footer>
+        <div class="social-links-footer">
+          <a href="mailto:myemail"><div class="social-link">Email</div></a>
+
+          <a href="https://github.com/github%20id" target="_blank"
+            ><div class="social-link">GitHub</div></a
+          >
+
+          <a href="https://gitlab.com/gitlab%20id" target="_blank"
+            ><div class="social-link">GitLab</div></a
+          >
+
+          <a href="https://twitter.com/twitter%20id" target="_blank"
+            ><div class="social-link">Twitter</div></a
+          >
+
+          <a href="https://www.linkedin.com/in/linkedin%20id" target="_blank"
+            ><div class="social-link">LinkedIn</div></a
+          >
+
+          <div class="social-link">
+            <a href="http://localhost:1313/index.xml" target="_blank">RSS</a>
+          </div>
+        </div>
+
+        <div class="copyright">@karthik</div>
+
+
+      </footer>
+
+       </div>
+<script data-no-instant>
+      document.write(
+        '<script src="/livereload.js?port=1313&mindelay=10&v=2"></' + "script>"
+      );
+    </script>
+    </body>
+</html>
