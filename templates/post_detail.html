@@ -1,42 +1,12 @@
+{% extends 'base.html' %} {% block content %}
 
-
-<!DOCTYPE html>
-
-<html>
-
-    <head>
-         <meta charset="utf-8" />
-    <meta name="author" content="karthik" />
-    <meta name="description" content="Personal blog." />
-    <meta name="keywords" content="blog, " />
-    <meta
-      name="viewport"
-      content="width=device-width,minimum-scale=1,initial-scale=1"
-    />
-
-
-
-    <title>
-      Blog
-    </title>
-        {% load static %}
-        <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %">
-        <link rel="stylesheet"  type="text/css" href="{% static 'css/style-dark.css' %">
-    </head>
-
-    <body>
-       <style>
-           body {
+<style>
+    body {
   font-family: "Arial", Gadget, sans-serif;
   counter-reset: heading;
   margin: 0;
 }
-.rmore {
-    color: var(--main-text);
-    margin-top: 0.5em;
-    white-space: nowrap;
-    text-align: right;
-}
+
 .main {
   margin: auto;
   max-width: 42em;
@@ -502,7 +472,16 @@ th, td {
   display: inline-block;
 }
 
+.rmore {
+  margin-top: 0.5em;
+  white-space:nowrap;
+  text-align: right;
+}
 
+.rmore a {
+  border-radius: 0.2em;
+  padding: 0.3em;
+}
 
 /* terms list */
 .terms {
@@ -617,251 +596,19 @@ th, td {
 }
 
 
-       </style>
-       <style>
-
-/*
- * main green: #99cc66
- * */
-
- :root {
-    --main-bg-color: #101010;
-    --main-text: #ffffff;
-    --main-sec: #99cc66; /* main secondary color for the site */
-    --code-quote-bg: #1D1F21; /* background color for quotes and code blocks */
-    --copyright: #808080; /* copyright text color */
-}
-
-body {
-  background: var(--main-bg-color);
-  color: var(--main-text);
-}
-
-a {
-  color: var(--main-text);
-}
-
-.__h_instagram.card {
-  border: 1px solid #303030 !important;
-}
-
-.__h_instagram .card-text {
-  color: var(--main-text);
-}
-
-.__h_instagram .card-header {
-  color: var(--main-bg-color);
-  background-color: #101010;
-}
-
-.__h_instagram .card-body {
-  color: var(--main-bg-color);
-  background-color: #101010;
-}
-
-pre {
-  background: var(--main-bg-color);
-  border: 1px solid #303030;
-  border-radius: 5px;
-}
-
-code {
-  background-color: transparent;
-}
-
-/*
- * syntax highlight code block table backround
- * looks better if overwritten.
- * */
-.post .content .highlight table {
-  background-color: #202020 !important;
-}
-
-blockquote {
-  background: var(--main-bg-color);
-  border-left: 3px solid var(--main-sec);
-}
-
-table { margin: 1em auto; border-collapse: collapse; }
-table, th, td { border: 1px solid #5C5C5C; }
-tr:hover { background: #1D1F21; }
-th { background: #101010; }
-.siteTitle a {
-  color: var(--main-sec);
-}
-
-.post {
-  background: #202020;
-  border-left: 1px solid #303030;
-  border-right: 1px solid #303030;
-  border-top: 1px solid #303030;
-  border-radius: 0.2em;
-  box-shadow: 0 1px 2px 0 #000000, 0 2px 5px 0 #000000;
-}
-
-.post .content h1{ color: var(--main-sec); }
-.post .content h2{ color: var(--main-sec); }
-.post .content h3{ color: var(--main-sec); }
-.post .content h4{ color: var(--main-sec); }
-.post .content h5{ color: var(--main-sec); }
-.post .content h6{ color: var(--main-sec); }
-.post .content a:hover { color: var(--main-sec); }
-.social-link:hover { color: var(--main-sec); }
-.nav-item-title:hover { color: var(--main-sec); }
-.tag a:hover { color: var(--main-sec); }
-.copyright { color: var(--copyright); }
-.poweredby { color: var(--copyright); }
-.poweredby a { color: var(--copyright); }
-
-.post-preview {
-  border: 1px solid #303030;
-  border-radius: 0.2em;
-  box-shadow: 0 1px 2px 0 #000000, 0 2px 5px 0 #000000;
-  background: #202020;
-}
-
-.post-preview .meta {
-  border-bottom: 1px solid #303030;
-}
-
-.post-preview .title a {
-  color: var(--main-sec);
-}
-
-.post-footer-data {
-  background-color: #101010;
-  border-bottom: 1px solid #303030;
-}
-
-.post-footer hr {
-  color: #303030;
-}
-
-.content-item {
-  background: #202020;
-  border: 1px solid #303030;
-  border-radius: 0.2em;
-  box-shadow: 0 1px 2px 0 #000000, 0 2px 5px 0 #000000;
-}
-
-.content-item .meta {
-  border-top: 1px dotted #303030;
-}
-
-.content-item a:hover{
-  text-decoration: underline;
-  color: var(--main-sec);
-}
-
-.post-list .title {
-  color: var(--main-sec);
-}
-
-
-
-.terms {
-  background: #202020;
-  border: 1px solid #303030;
-  box-shadow: 0 1px 2px 0 #000000, 0 2px 5px 0 #000000;
-}
-
-.terms .term {
-  border-bottom: 1px dotted #303030;
-}
-
-.term a:hover {
-  text-decoration: underline;
-  color: var(--main-sec);
-}
-
-.err-404 {
-  border: 1px solid #303030;
-  border-radius: 0.2em;
-  background: #202020;
-  box-shadow: 0 1px 2px 0 #000000, 0 2px 5px 0 #000000;
-}
-
-       </style>
-
-
-
-        <!-- Navigation -->
-       <div class="main">
-            <header>
-        <div class="header-bar">
-          <nav>
-            <div class="siteTitle">
-              <a href="">My Blog</a>
-            </div>
-
-            <a class="nav-item" href=""
-              ><div class="nav-item-title">Posts</div></a
-            >
-            <a class="nav-item" href="/admin"
-              ><div class="nav-item-title">Admin</div></a
-            >
-          </nav>
-
-          <div class="social-links-header">
-            <!--
-
-            <a href="https://github.com/github%20id" target="_blank"
-              ><div class="social-link">git</div></a
-            >
-
-            <a href="https://gitlab.com/gitlab%20id" target="_blank"
-              ><div class="social-link">gl</div></a
-            >
-
-            <a href="https://twitter.com/twitter%20id" target="_blank"
-              ><div class="social-link">twtr</div></a
-            >
-
-            <a href="https://www.linkedin.com/in/linkedin%20id" target="_blank"
-              ><div class="social-link">in</div></a
-            >-->
-          </div>
+</style>
+<article class="post">
+    <h1 class="title">{% block title %} {{ object.title }} {% endblock title %}</h1>
+    <div class="content">
+        {{ object.content | safe }}
+    </div>
+    <hr>
+    <footer class="post-footer">
+        <div class="post-footer-data">
+            <div class="date"> {{ post.created_on }} </div>
+            <hr>
         </div>
-      </header>
-        {% block content %}
-        <!-- Content Goes here -->
-        {% endblock content %}
-        <!-- Footer -->
-            <footer>
-        <div class="social-links-footer">
-          <a href="mailto:karthiknaik120@gmail.com"><div class="social-link">Email</div></a>
+</footer>
+</article>
 
-          <a href="https://github.com/ycodex" target="_blank"
-            ><div class="social-link">GitHub</div></a
-          >
-
-          <a href="https://snapchat.com/add/karthik221b" target="_blank"
-            ><div class="social-link">Snapchat</div></a
-          >
-            <a href="https://instagram.com/karthik._k23" target="_blank"
-            ><div class="social-link">Instagram</div></a
-          >
-
-
-          <a href="https://twitter.com/karthiknaik23" target="_blank"
-            ><div class="social-link">Twitter</div></a
-          >
-
-
-
-
-        </div>
-
-        <div class="copyright">@karthik</div>
-
-
-      </footer>
-
-       </div>
-<script data-no-instant>
-      document.write(
-        '<script src="/livereload.js?port=1313&mindelay=10&v=2"></' + "script>"
-      );
-    </script>
-    </body>
-</html>
+{% endblock content %}
